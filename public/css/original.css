@@ -1,0 +1,22 @@
+
+.content {
+	margin: 0 auto;
+}
+
+.square{
+
+		background-color: #a00;
+		color:red;
+		width: 250px;
+		height: 250px;
+		margin: 10px;
+
+}
+
+.row-flex {
+	margin: 0;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
