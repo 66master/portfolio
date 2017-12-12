@@ -1,4 +1,4 @@
-@extends('layout.common')
+@extends('layouts.common')
 
 @section('title', 'ホーム')
 @section('keywords', 'ポートフォリオ')
@@ -6,8 +6,8 @@
 @section('pageCss')
 <link href="/css/page.css" rel="stylesheet">
 @endsection
-@include('layout.head')
-@include('layout.header')
+@include('layouts.head')
+@include('layouts.header')
 @section('content')
 
 <p>コンテンツ</p>
@@ -18,4 +18,4 @@
 <script src="/js/page.js"></script>
 @endsection
 
-@include('layout.footer')
+@include('layouts.footer')
