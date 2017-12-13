@@ -9,13 +9,24 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a href="" class="navbar-brand">Takuya Ohno Portfolio</a>
+					<a href="" class="navbar-brand">My Portfolio</a>
+					<a class="navbar-brand" href="{{ url('/') }}">
+            {{ config('app.name', 'Laravel') }}
+          </a>
 				</div>
 				<div class="collapse navbar-collapse navbar-right" id="navbarCompact">
 				<ul class="nav navbar-nav">
-					<li class="nav-item"><a href="" class="nav-link">profile</a></li>
-					<li class="nav-inem"><a href="" class="nav-link">web</a></li>
-					<li class="nav-item"><a href="" class="nav-link">paper</a></li>
+					@guest
+						<li><a href="{{ route('login') }}">Login</a></li>
+						<li><a href="{{ route('register') }}">Register</a></li>
+					@else
+						<li class="nav-item"><a href="" class="nav-link">profile</a></li>
+						<li class="nav-inem"><a href="" class="nav-link">web</a></li>
+						<li class="nav-item"><a href="" class="nav-link">paper</a></li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                {{ Auth::user()->name }} <span class="caret"></span>
+            </a>
+					@endguest
 				</ul>
 			</div>
 		</nav>
