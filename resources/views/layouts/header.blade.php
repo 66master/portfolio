@@ -23,9 +23,18 @@
 						<li class="nav-item"><a href="" class="nav-link">profile</a></li>
 						<li class="nav-inem"><a href="" class="nav-link">web</a></li>
 						<li class="nav-item"><a href="" class="nav-link">paper</a></li>
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                {{ Auth::user()->name }} <span class="caret"></span>
-            </a>
+						<li>
+							<div class="dropdown">
+					            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+					                {{ Auth::user()->name }} <span class="caret"></span>
+					            </a>
+					            <ul　class="dropdown-menu" role="menu">
+					            	<li><a href="{{ url('/users')}}"</li>
+					            	<li>マイページ</li>
+					            	<li><a href="{{route('logout')}}">ログアウト</a></li>
+					            </ul>
+					        </div>
+				        </li>
 					@endguest
 				</ul>
 			</div>

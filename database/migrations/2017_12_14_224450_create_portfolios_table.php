@@ -15,14 +15,14 @@ class CreatePortfoliosTable extends Migration
     {
         Schema::create('portfolios', function (Blueprint $table) {
             $table->increments('id');
-            $table->bigInteger('user_id')->comment('user id');
+            $table->integer('user_id')->unsigned()->comment('user id');
             $table->string('category')->comment('category of portfolio');
             $table->string('type')->comment('type of category');
             $table->string('title')->comment('title of portfolio');
             $table->longText('description')->comment('description of portfolio')->nullable;
             $table->timestamps();
 
-            $table->foreing('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

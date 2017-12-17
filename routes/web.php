@@ -17,10 +17,10 @@ Route::get('/', function () {
 });
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+
+//users
+Route::get('/users', 'UsersController@index')->name('user');
+Route::post('/post', 'UsersController@post');

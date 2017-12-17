@@ -1,5 +1,12 @@
-@extends('layouts.app')
-
+@extends('layouts.common')
+@section('title', '登録')
+@section('keywords', 'ポートフォリオ')
+@section('description', 'WEBエンジニア Takupan のポートフォリオサイト')
+{{--@section('pageCss')
+<link href="css/page.css" rel="stylesheet">
+@endsection--}}
+@include('layouts.head')
+@include('layouts.header')
 @section('content')
 <div class="container">
     <div class="row">
