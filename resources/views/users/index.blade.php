@@ -12,11 +12,11 @@
 
 <div class="container">
 	<h1>ポートフォリオ投稿画面</h1>
-	<form action="" method="post"　enctype="multipart/form-data">
+	<form action="post" method="post"　enctype="multipart/form-data">
 		{{ csrf_field() }}
 		<div class="form-group">
 			<label>画像</label>
-			<input type="file" name="image"　 />
+			<input type="file" name="image"　value="{{old('name')}}" />
 		</div>
 		<div class="form-group">
 		<label>カテゴリー</label>
@@ -39,15 +39,15 @@
 		</div>
 		<div class="form-group">
 			<label>タイトル</label>
-			<input type="text" name="title" />
+			<input type="text" name="title" value="{{old('title')}}" />
 		</div>
 
 		<div class="form-group">
 			<lable>詳細説明</lable>
-			<textarea name="description"></textarea>
+			<textarea name="description">{{old('description')}}</textarea>
 		</div>
 
-		<input type="button" value="送信">
+		<input type="submit" value="送信">
 
 	</form>
 

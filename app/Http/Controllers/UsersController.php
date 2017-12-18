@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App;
 
 class UsersController extends controller
 {
@@ -31,26 +32,20 @@ class UsersController extends controller
 
 	public function post(Request $request){
 
-        $imageUrl;
-        $category;
-        $type;
-        $title;
-        $description;
-
-        $imageUrl = $request->image;
-        $category = $request->category;
-        $type = $request->type;
-        $title = $request->title;
-        $description = $request->description;
+        $post = new Post;
 
 
-        
+        if($request->hasFile('image')){
+            $post->imageUrl = $request->image->store(storage_path().'images');
+        }else{
+            return;
+        }
+        $post->category = $request->category;
+        $post->type = $request->type;
+        $post->title = $request->title;
+        $post->description = $request->description;
 
-        
-
-		
-
-
+        $post->save();
 	}
 
 
