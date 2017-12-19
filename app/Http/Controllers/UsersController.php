@@ -32,7 +32,9 @@ class UsersController extends controller
 
 	public function post(Request $request){
 
-        $post = new Post;
+        //$post = new App\Post;
+
+        $post = $request->all();
 
 
         if($request->hasFile('image')){
