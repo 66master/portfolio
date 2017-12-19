@@ -22,5 +22,5 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 
 //users
-Route::get('/users', 'UsersController@index')->name('user');
-Route::post('/post', 'UsersController@post');
+Route::get('/portfolios', 'PortfoliosController@index')->name('portfolio');
+Route::post('/portfolios', 'PortfoliosController@post');

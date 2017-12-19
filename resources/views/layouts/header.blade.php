@@ -29,7 +29,7 @@
 					                {{ Auth::user()->name }} <span class="caret"></span>
 					            </a>
 					            <ul　class="dropdown-menu" role="menu">
-					            	<li><a href="{{ url('/users')}}"</li>
+					            	<li><a href="{{ url('/portfolios')}}"</li>
 					            	<li>マイページ</li>
 					            	<li><a href="{{route('logout')}}">ログアウト</a></li>
 					            </ul>

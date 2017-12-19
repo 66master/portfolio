@@ -12,7 +12,7 @@
 
 <div class="container">
 	<h1>ポートフォリオ投稿画面</h1>
-	<form action="post" method="post"　enctype="multipart/form-data">
+	<form action="portfolios" method="post"　enctype="multipart/form-data">
 		{{ csrf_field() }}
 		<div class="form-group">
 			<label>画像</label>
@@ -48,6 +48,7 @@
 		</div>
 
 		<input type="submit" value="送信">
+
 
 	</form>
 
