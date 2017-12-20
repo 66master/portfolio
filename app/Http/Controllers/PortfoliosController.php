@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+//use Illuminate\Http\UploadedFile;
+use Auth;
 use App\Portfolio;
 
 class PortfoliosController extends controller
@@ -32,23 +34,29 @@ class PortfoliosController extends controller
 
 	public function post(Request $request){
 
-        $portfolio = new Portfolio;
+        $user = Auth::user();
+        $image_file = $request->file('image');
 
+        //dd($request->file('image'));
+
+        $portfolio = new Portfolio;
 
         //$post = $request->all();
 
-
         if($request->hasFile('image')){
-            $portfolio->imageUrl = $request->image->store(storage_path().'images');
+            $portfolio->image = $request->file('image')->store('public/images');
         }else{
-            return view('portfolios/index')->with('message', '送信に失敗しました');
+            return redirect('portfolios')->with('error_message', '画像ファイルの送信に失敗しました。');
         }
+
+        $portfolio->user_id = $user->id;
         $portfolio->category = $request->category;
         $portfolio->type = $request->type;
         $portfolio->title = $request->title;
         $portfolio->description = $request->description;
 
         $portfolio->save();
+            return redirect('portfolios')->with('success_message', 'データベースへ保存しました。');
 	}
 
 

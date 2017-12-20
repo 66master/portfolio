@@ -12,11 +12,22 @@
 
 <div class="container">
 	<h1>ポートフォリオ投稿画面</h1>
-	<form action="portfolios" method="post"　enctype="multipart/form-data">
+
+		@if(session('error_message'))
+			<div class="alert">
+			{{ session('error_message')}}
+			</div>
+		@elseif(session('success_message'))
+			<div class="success">
+				{{ session('success_message') }}
+			</div>
+		@endif
+	<form action="portfolios" method="post" enctype="multipart/form-data">
 		{{ csrf_field() }}
 		<div class="form-group">
 			<label>画像</label>
-			<input type="file" name="image"　value="{{old('name')}}" />
+			<input type="hidden" name="MAX_FILE_SIZE" value="3145728">
+			<input type="file" name="image" />
 		</div>
 		<div class="form-group">
 		<label>カテゴリー</label>
@@ -48,8 +59,6 @@
 		</div>
 
 		<input type="submit" value="送信">
-
-
 	</form>
 
 

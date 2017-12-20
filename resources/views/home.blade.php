@@ -12,38 +12,14 @@
 
 <div calss="container">
 <div class="row-flex row-flex-wrap">
+
+    @foreach($portfolios as $value)
+
     <div class="col-xs square">
-        <img src="" />
-        web
+        <img src="{{ asset('storage'). '/' . $value->image }}" />
     </div>
-    <div class="col-xs square">
-        <img src="" />
-        web
-    </div>
-    <div class="col-xs square">
-        <img src="" />
-        web
-    </div>
-    <div class="col-xs square">
-        <img src="" />
-        web
-    </div>
-    <div class="col-xs square">
-        <img src="" />
-        web
-    </div>
-    <div class="col-xs square">
-        <img src="" />
-        web
-    </div>
-    <div class="col-xs square">
-        <img src="" />
-        web
-    </div>
-    <div class="col-xs square">
-        <img src="" />
-        web
-    </div>
+
+    @endforeach
 </div>
 </div>
 

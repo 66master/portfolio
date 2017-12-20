@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Portfolio;
+use DB;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+        $portfolios = DB::table('portfolios')->get();
+        return view('home', ['portfolios' => $portfolios]);
+
     }
 }
