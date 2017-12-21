@@ -45,6 +45,7 @@ class PortfoliosController extends controller
 
         if($request->hasFile('image')){
             $portfolio->image = $request->file('image')->store('public/images');
+            $portfolio->image = basename($portfolio->image);
         }else{
             return redirect('portfolios')->with('error_message', '画像ファイルの送信に失敗しました。');
         }

@@ -16,7 +16,7 @@
     @foreach($portfolios as $value)
 
     <div class="col-xs square">
-        <img src="{{ asset('storage'). '/' . $value->image }}" />
+        <img src="{{ asset('storage/images/' . $value->image) }}" class="portfolio-image" />
     </div>
 
     @endforeach
