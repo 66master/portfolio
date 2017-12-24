@@ -7,5 +7,6 @@
 <link href="css/original.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
 @yield('pageCss')
 @endsection

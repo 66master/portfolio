@@ -16,23 +16,30 @@
 				</div>
 				<div class="collapse navbar-collapse navbar-right" id="navbarCompact">
 				<ul class="nav navbar-nav">
-					@guest
-						<li><a href="{{ route('login') }}">Login</a></li>
-						<li><a href="{{ route('register') }}">Register</a></li>
-					@else
 						<li class="nav-item"><a href="" class="nav-link">profile</a></li>
 						<li class="nav-inem"><a href="" class="nav-link">web</a></li>
 						<li class="nav-item"><a href="" class="nav-link">paper</a></li>
-						<li>
-							<div class="dropdown">
-					            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+				</ul>
+				<ul class="nav navbar-nav">
+					@guest
+						<span style="display: none;" id="login">
+						<li><a href="{{ route('login') }}">Login</a></li>
+						<li><a href="{{ route('register') }}">Register</a></li>
+						</span>
+					@else
+						<li class="nav-item">
+							<div class="dropdown show">
+					            <a href="#" class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					                {{ Auth::user()->name }} <span class="caret"></span>
 					            </a>
-					            <ul　class="dropdown-menu" role="menu">
-					            	<li><a href="{{ url('/portfolios')}}"</li>
-					            	<li>マイページ</li>
-					            	<li><a href="{{route('logout')}}">ログアウト</a></li>
-					            </ul>
+								<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+									<a href="{{ url('/portfolios')}}">投稿</a>
+									<a class="dropdown-item" href="#">マイページ</a>
+									<a href="{{ route('logout')}}" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト</a>
+									<form action="{{route('logout')}}" method="post" id="logout-form">
+										{{ csrf_field() }}
+									</form>
+								</div>
 					        </div>
 				        </li>
 					@endguest

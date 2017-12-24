@@ -22,11 +22,12 @@
     @endforeach
 </div>
 </div>
-
+<script type="text/javascript" src="js/original.js"></script>
 @endsection
 
 @section('pageJs')
 <script src="/js/page.js"></script>
+
 @endsection
 
 @include('layouts.footer')
