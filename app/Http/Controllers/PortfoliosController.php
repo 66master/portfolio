@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 //use Illuminate\Http\UploadedFile;
 use Auth;
 use App\Portfolio;
+use Illuminate\Filesystem\Filesystem;
 
 class PortfoliosController extends controller
 {
