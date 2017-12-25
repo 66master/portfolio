@@ -1,7 +1,7 @@
 @section('footer')
 <footer class="footer">
 
-<img src="{{ storage_path() }}/images/logos/laravel.svg" width="50" height="50" />
+<img src="{{ asset('storage/logos/laravel.svg') }}" width="50" height="50" />
 
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
