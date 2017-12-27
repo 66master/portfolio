@@ -25,3 +25,6 @@ Route::get('/', 'HomeController@index')->name('home');
 //users
 Route::get('/portfolios', 'PortfoliosController@index')->name('portfolio');
 Route::post('/portfolios', 'PortfoliosController@post');
+
+//profile
+Route::get('/profile', 'profileController@index')->name('profile');
