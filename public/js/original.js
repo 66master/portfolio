@@ -2,7 +2,9 @@
 	'use strict';
 
 	var loginBtn = document.getElementById('login');
-	const COMMAND = env('MY_COMMAND');
+	var returnAjax = getEnvFromJs('MY_COMMAND');
+	const COMMAND = returnAjax;
+	console.log(COMMAND);
 	var getCommand = 0;
 	var num;
 
@@ -22,11 +24,34 @@
 	});
 
 	function combine(num, getCommand){
-
 		num = getCommand + num;
 		return num;
-
 	}
 
+	function getEnvFromJs(request) {
+			$.ajaxSetup({
+				headers: {
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				}
+			});
+
+			var def = $.Deferred(); 
+			var returnAjax = $.ajax({
+				url: 'profile/getenv',
+				dataType: 'text', //text, html, xml, json, jsonp, script
+				type: 'POST', //method
+				data: {
+					'request': request
+				},
+				async: false
+			}).responseText;
+
+			return returnAjax;
+
+			//return def.promise();
+			
+
+			//return def.promise();
+	}
 
 }());

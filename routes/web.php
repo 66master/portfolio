@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,9 +21,28 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::get('/', 'HomeController@index')->name('home');
 
-//users
+//portfolio
 Route::get('/portfolios', 'PortfoliosController@index')->name('portfolio');
-Route::post('/portfolios', 'PortfoliosController@post');
+Route::get('/portfolios/create', 'PortfoliosController@create')->middleware('Auth');
+Route::post('/portfolios', 'PortfoliosController@store')->middleware('Auth');
+Route::get('/portfolios/edit', 'PortfoliosController@edit')->middleware('Auth');
+Route::get('/portfolios/show/{id}', 'PortfoliosController@show')->name('portfolio.show');
+
 
 //profile
-Route::get('/profile', 'profileController@index')->name('profile');
+Route::get('/profile', 'ProfileController@show')->name('profile');
+Route::get('/profile/edit', 'ProfileController@edit');
+
+
+
+//jsからenvの内容を取得するajax用のルーティング
+Route::post('/profile/getenv', function() {
+
+	//return 'moemoe';
+	if($_SERVER['REQUEST_METHOD'] == 'POST'){
+		$request = $_POST['request'];
+		//$request = "hoge";
+	}
+	return env($request);
+
+});

@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 //use Illuminate\Http\UploadedFile;
 use Auth;
 use App\Portfolio;
-use Illuminate\Filesystem\Filesystem;
+//use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Facades\Storage;
+use DB;
 
 class PortfoliosController extends controller
 {
@@ -16,10 +18,14 @@ class PortfoliosController extends controller
      *
      * @return void
      */
-    public function __construct()
+    /*
+    public function __construct($uri)
     {
-    	$this->middleware('auth');
+
+    	// $this->middleware('auth');
+        
     }
+    */
 
     /**
      * Create a new controller instance.
@@ -28,13 +34,18 @@ class PortfoliosController extends controller
      */
 	public function index(){
 
-		return view('portfolios/index');
+        $logo_files = Storage::allFiles(storage_path(). '/logos/');
+		return view('portfolios/index')->with('logo_files', $logo_files);
 		
 	}
 
+    public function create()
+    {
+        return view('portfolios/create');
+    }
 
-	public function post(Request $request){
 
+	public function store(Request $request){
         $user = Auth::user();
         $image_file = $request->file('image');
 
@@ -60,6 +71,14 @@ class PortfoliosController extends controller
         $portfolio->save();
             return redirect('portfolios')->with('success_message', 'データベースへ保存しました。');
 	}
+
+    public function show($id)
+    {
+
+        $portfolio = DB::table('Portfolios')->where('id', $id)->first();
+        return view('portfolios/show')->with('portfolio', $portfolio);
+
+    }
 
 
 }
