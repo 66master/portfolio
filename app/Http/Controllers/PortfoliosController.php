@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-//use Illuminate\Http\UploadedFile;
-use Auth;
+use App\Http\Controllers\Controller;
 use App\Portfolio;
+//use Illuminate\Http\UploadedFile;
 //use Illuminate\Filesystem\Filesystem;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use DB;
+use Auth;
 
 class PortfoliosController extends controller
 {
