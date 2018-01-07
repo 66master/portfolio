@@ -23,9 +23,9 @@ Route::get('/', 'HomeController@index')->name('home');
 
 //portfolio
 Route::get('/portfolios', 'PortfoliosController@index')->name('portfolio');
-Route::get('/portfolios/create', 'PortfoliosController@create')->middleware('Auth');
-Route::post('/portfolios', 'PortfoliosController@store')->middleware('Auth');
-Route::get('/portfolios/edit', 'PortfoliosController@edit')->middleware('Auth');
+Route::get('/portfolios/create', 'PortfoliosController@create');
+Route::post('/portfolios', 'PortfoliosController@store');
+Route::get('/portfolios/edit', 'PortfoliosController@edit');
 Route::get('/portfolios/show/{id}', 'PortfoliosController@show')->name('portfolio.show');
 
 

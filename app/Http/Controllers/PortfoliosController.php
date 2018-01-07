@@ -42,11 +42,13 @@ class PortfoliosController extends controller
 
     public function create()
     {
+        $this->middleware('auth');
         return view('portfolios/create');
     }
 
 
 	public function store(Request $request){
+        $this->middleware('auth');
         $user = Auth::user();
         $image_file = $request->file('image');
 
