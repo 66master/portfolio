@@ -30,22 +30,29 @@
 			<input type="file" name="image" />
 		</div>
 		<div class="form-group">
-		<label>カテゴリー</label>
-		<select name="category">
-			<option>選択してください</option>
-			<option>WEB</option>
-			<option>PAPER</option>
-			<option>DESIGN</option>
-		</select>
+			<label>カテゴリー</label>
+			<select name="category">
+				<option>選択してください</option>
+				<option>WEB</option>
+				<option>PAPER</option>
+				<option>DESIGN</option>
+			</select>
 		</div>
-
 		<div class="form-group">
-			<labe>種類</labe>
+			<label>種類</label>
 			<select type="" name="type">
 				<option>選択してください</option>
-				<option>EC</option>
-				<option>AD</option>
-				<option>CATALOG</option>
+				<option name="ブランドサイト">ブランドサイト</option>
+				<option name="コーポレートサイト">コーポレートサイト</option>
+				<option name="ECサイト">ECサイト</option>
+				<option name="ポータルサイト">ポータルサイト</option>
+				<option name="ブログ">ブログ</option>
+				<option name="アプリケーション">アプリケーション</option>
+				<option　name="広告">広告</option>
+				<option　name="カタログ">カタログ</option>
+				<option　name="フライヤー">フライヤー</option>
+				<option　name="ポップ">ポップ</option>
+				<option name="パッケージ">パッケージ</option>
 			</select>
 		</div>
 		<div class="form-group">
@@ -54,7 +61,7 @@
 		</div>
 
 		<div class="form-group">
-			<lable>詳細説明</lable>
+			<label>詳細説明</label>
 			<textarea name="description">{{old('description')}}</textarea>
 		</div>
 
