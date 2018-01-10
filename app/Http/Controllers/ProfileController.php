@@ -14,15 +14,7 @@ class ProfileController extends Controller
 	public function show($id)
 	{
 
-		$user = Auth::user();
-
-		//$userName = DB::user->
-		//$profile = DB::table('profiles')->get();
-		//dd($user);
-		$profile = DB::table('profiles')->where('id', $id)->first();
-		//dd($profile);
-
-		//return view('profile.show', compact('profile'));
+		$profile = \App\Profile::find($id);
 
 		return view('profile.show', compact('profile'));
 

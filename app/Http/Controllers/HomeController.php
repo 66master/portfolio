@@ -33,11 +33,10 @@ class HomeController extends Controller
 
         $logo_files = str_replace('public/logos', 'storage/logos', $logo_files);
 
-
         //$logo_filesをファイル名だけに置換
-
+        $users = DB::table('users')->get();
         $portfolios = DB::table('portfolios')->get();
-        return view('home', ['portfolios' => $portfolios])->with('logo_files', $logo_files);
+        return view('home', ['portfolios' => $portfolios, 'users' => $users])->with('logo_files', $logo_files);
 
     }
 }

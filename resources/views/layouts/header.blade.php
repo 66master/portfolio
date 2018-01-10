@@ -16,7 +16,6 @@
 				</div>
 			<div class="collapse navbar-collapse navbar-right globalNav" id="navbarCompact">
 				<ul class="nav navbar-nav">
-					<li class="nav-item"><a href="{{ asset('profile') }}" class="nav-link">プロフィール</a></li>
 					<li class="nav-inem"><a href="" class="nav-link">WEB</a></li>
 					<li class="nav-item"><a href="" class="nav-link">PAPER</a></li>
 					<li class="nav-item"><a href="" class="nav-link">DESIGN</a></li>

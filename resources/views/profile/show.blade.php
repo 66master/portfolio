@@ -16,7 +16,7 @@
 		@endauth
 		<div class="col-md-12">
 			<h3>名前</h3>
-			<p>大野拓哉</p>
+			<p>{{ $profile->user->name }}</p>
 		</div>
 	</div>
 	@if(isset($message))

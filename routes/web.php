@@ -30,7 +30,7 @@ Route::get('/portfolios/show/{id}', 'PortfoliosController@show')->name('portfoli
 
 
 //profile
-Route::get('/profile/{id?}', function($id = null){
+Route::get('/profile/show/{id?}', function($id = null){
 
 	$profile = new App\Http\Controllers\ProfileController;
 

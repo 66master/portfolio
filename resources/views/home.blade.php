@@ -11,12 +11,17 @@
 
 <div class="row-flex row-flex-wrap">
 
-    @foreach($portfolios as $value)
+    @foreach($portfolios as $portfolio)
 
     <div class="col-xs square">
-    	<a href="{{ asset('portfolios/show/' . $value->id) }}">
-   	    	<img src="{{ asset('storage/images/' . $value->image) }}" class="portfolio-thumb" />
+    	<a href="{{ asset('portfolios/show/' . $portfolio->id) }}">
+   	    	<img src="{{ asset('storage/images/' . $portfolio->image) }}" class="portfolio-thumb" />
 	    </a>
+	    @foreach($users as $user)
+	    	@if($portfolio->user_id == $user->id)
+		    	@<a href="{{ asset('profile/show').'/'.$user->id }}">{{ $user->name }}</a>
+	    	@endif
+	    @endforeach
     </div>
 
     @endforeach
