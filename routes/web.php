@@ -30,7 +30,20 @@ Route::get('/portfolios/show/{id}', 'PortfoliosController@show')->name('portfoli
 
 
 //profile
-Route::get('/profile', 'ProfileController@show')->name('profile');
+Route::get('/profile/{id?}', function($id = null){
+
+	$profile = new App\Http\Controllers\ProfileController;
+
+	if(isset($id)){
+		return $profile->show($id);
+	}elseif($id === null){
+		return view('profile.show')->with('message', 'プロフィーはまだ登録されていません。');
+	}else{
+		
+	}
+
+})->name('profile');
+
 Route::get('/profile/edit', 'ProfileController@edit');
 
 
