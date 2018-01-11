@@ -78,7 +78,7 @@ class PortfoliosController extends controller
     public function show($id)
     {
 
-        $portfolio = DB::table('Portfolios')->where('id', $id)->first();
+        $portfolio = DB::table('portfolios')->where('id', $id)->first();
         return view('portfolios/show')->with('portfolio', $portfolio);
 
     }

@@ -10,9 +10,7 @@
 						<span class="icon-bar"></span>
 					</button>
 					<a href="" class="navbar-brand">My Portfolio</a>
-					<a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'Laravel') }}
-          </a>
+					<a class="navbar-brand" href="{{ url('/') }}">{{ config('app.name', 'Laravel') }}</a>
 				</div>
 			<div class="collapse navbar-collapse navbar-right globalNav" id="navbarCompact">
 				<ul class="nav navbar-nav">
