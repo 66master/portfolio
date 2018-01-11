@@ -51,10 +51,8 @@ Route::get('/profile/edit', 'ProfileController@edit');
 //jsからenvの内容を取得するajax用のルーティング
 Route::post('/profile/getenv', function() {
 
-	//return 'moemoe';
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$request = $_POST['request'];
-		//$request = "hoge";
 	}
 	return env($request);
 
