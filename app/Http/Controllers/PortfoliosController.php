@@ -80,7 +80,6 @@ class PortfoliosController extends controller
 
         $portfolio = DB::table('portfolios')->where('id', $id)->first();
         return view('portfolios/show')->with('portfolio', $portfolio);
-
     }
 
 
