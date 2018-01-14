@@ -11,8 +11,10 @@
 @section('content')
 <div class="row-flex row-flex-wrap">
 
+	@if(isset($message))
+		<p>{{ $message }}</p>
+	@endif
     @foreach($portfolios as $portfolio)
-
     <div class="col-xs square">
     	<a href="{{ asset('portfolios/show/' . $portfolio->id) }}">
    	    	<img src="{{ asset('storage/images/' . $portfolio->image) }}" class="portfolio-thumb" />

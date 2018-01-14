@@ -8,8 +8,10 @@ use App\Portfolio;
 //use Illuminate\Filesystem\Filesystem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Input;
 use DB;
 use Auth;
+
 
 class PortfoliosController extends controller
 {
@@ -35,9 +37,24 @@ class PortfoliosController extends controller
      */
 	public function index(){
 
-        $logo_files = Storage::allFiles(storage_path(). '/logos/');
-		return view('portfolios/index')->with('logo_files', $logo_files);
-		
+        //$logo_filesをファイル名だけに置換
+        $users = DB::table('users')->get();
+        $category = Input::get('category');
+        if(isset($category)){
+            $count = DB::table('portfolios')->where('category', $category)->count();
+            $portfolios = DB::table('portfolios')->where('category', $category)->get();
+        }else{
+            $portfolios = DB::table('portfolios')->get();
+        }
+
+            if($count == 0){
+                $message = 'Sorry! Portfolio of ' . $category . ' category was note posted.';
+                return view('portfolios/index', ['portfolios' => $portfolios, 'users' => $users])->with('message', $message);
+            }else{
+                return view('portfolios/index', ['portfolios' => $portfolios, 'users' => $users]);
+               
+            }
+
 	}
 
     public function create()
