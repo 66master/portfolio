@@ -9,58 +9,25 @@
 @include('layouts.header')
 
 @section('content')
+<div class="row-flex row-flex-wrap">
 
-<div class="container">
-	<h1>ポートフォリオ投稿画面</h1>
+    @foreach($portfolios as $portfolio)
 
-		@if(session('error_message'))
-			<div class="alert">
-			{{ session('error_message')}}
-			</div>
-		@elseif(session('success_message'))
-			<div class="success">
-				{{ session('success_message') }}
-			</div>
-		@endif
-	<form action="portfolios" method="post" enctype="multipart/form-data">
-		{{ csrf_field() }}
-		<div class="form-group">
-			<label>画像</label>
-			<input type="hidden" name="MAX_FILE_SIZE" value="3145728">
-			<input type="file" name="image" />
-		</div>
-		<div class="form-group">
-		<label>カテゴリー</label>
-		<select name="category">
-			<option>選択してください</option>
-			<option>WEB</option>
-			<option>PAPER</option>
-			<option>DESIGN</option>
-		</select>
-		</div>
+    <div class="col-xs square">
+    	<a href="{{ asset('portfolios/show/' . $portfolio->id) }}">
+   	    	<img src="{{ asset('storage/images/' . $portfolio->image) }}" class="portfolio-thumb" />
+	    </a>
+	    @foreach($users as $user)
+	    	@if($portfolio->user_id == $user->id)
+		    	@<a href="{{ asset('profile/show').'/'.$user->id }}">{{ $user->name }}</a>
+	    	@endif
+	    @endforeach
+	    <a href="{{ asset('portfolios/show' . $portfolio->id) }}">{{ $portfolio->title }}</a>
+    </div>
 
-		<div class="form-group">
-			<labe>種類</labe>
-			<select type="" name="type">
-				<option>選択してください</option>
-				<option>EC</option>
-				<option>AD</option>
-				<option>CATALOG</option>
-			</select>
-		</div>
-		<div class="form-group">
-			<label>タイトル</label>
-			<input type="text" name="title" value="{{old('title')}}" />
-		</div>
+    @endforeach
 
-		<div class="form-group">
-			<lable>詳細説明</lable>
-			<textarea name="description">{{old('description')}}</textarea>
-		</div>
-
-		<input type="submit" value="送信">
-	</form>
-
-
-
+</div>
 @endsection
+@include('layouts.footer')
+

@@ -15,7 +15,7 @@ BACK</a></div>
 	<div class="row image">
 	    <div class="col-xs-12">
 	        <img src="{{ asset('storage/images/' . $portfolio->image) }}" class="portfolio-image" />
-	    </div>    	
+	    </div>
 	</div>
 	<div class="row category">
 		<div class="col-xs-2">
