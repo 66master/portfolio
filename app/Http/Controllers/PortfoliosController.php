@@ -40,7 +40,7 @@ class PortfoliosController extends controller
         //$logo_filesをファイル名だけに置換
         $users = DB::table('users')->get();
         $category = Input::get('category');
-        $count = 
+
         if(isset($category)){
             $count = DB::table('portfolios')->where('category', $category)->count();
             $portfolios = DB::table('portfolios')->where('category', $category)->get();
