@@ -22,11 +22,9 @@
 		    	@<a href="{{ asset('profile/show').'/'.$user->id }}">{{ $user->name }}</a>
 	    	@endif
 	    @endforeach
-	    <a href="{{ asset('portfolios/show' . $portfolio->id) }}">{{ $portfolio->title }}</a>
+	    <a href="{{ asset('portfolios/show' .'/'. $portfolio->id) }}">{{ $portfolio->title }}</a>
     </div>
-
     @endforeach
-
 </div>
 
 @endsection
