@@ -134,7 +134,7 @@ footer {
 
 .square {
 		width: 250px;
-		height: 250px;
+		height: auto;
 		margin: 20px 20px 40px 20px;
 }
 
