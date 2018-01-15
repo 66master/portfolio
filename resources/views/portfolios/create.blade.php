@@ -64,7 +64,6 @@
 			<label>詳細説明</label>
 			<textarea name="description">{{old('description')}}</textarea>
 		</div>
-
 		<input type="submit" value="送信">
 	</form>
 
