@@ -45,18 +45,16 @@ class PortfoliosController extends controller
             $count = DB::table('portfolios')->where('category', $category)->count();
             $portfolios = DB::table('portfolios')->where('category', $category)->get();
         }else{
-            $count = DB::table('portfolios')->where('category', $category)->count();
+            $count = DB::table('portfolios')->count();
             $portfolios = DB::table('portfolios')->get();
         }
 
             if($count == 0){
-                $message = 'Sorry! Portfolio of ' . $category . ' category was note posted.';
+                $message = 'Sorry! Portfolio of ' . $category . ' category was not posted.';
                 return view('portfolios/index', ['portfolios' => $portfolios, 'users' => $users])->with('message', $message);
             }else{
-                return view('portfolios/index', ['portfolios' => $portfolios, 'users' => $users]);
-               
+                return view('portfolios/index', ['portfolios' => $portfolios, 'users' => $users]);  
             }
-
 	}
 
     public function create()
