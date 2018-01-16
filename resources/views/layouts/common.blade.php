@@ -7,9 +7,9 @@
 <body>
 <div id="wrapper">
   @yield('header')
-  <div class="container">
-    @yield('content')
-  </div>
+
+   @yield('content')
+
   @yield('footer')
 </div>
 </body>
