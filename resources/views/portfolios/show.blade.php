@@ -8,10 +8,9 @@
 @include('layouts.head')
 @include('layouts.header')
 @section('content')
+<div class="continer">
 <div id="portfolio">
-	<div class="localNav"><a href="{{ $_SERVER['HTTP_REFERER'] }}"><i class="fas fa-arrow-circle-left"></i>
-
-BACK</a></div>
+	<div class="localNav"><a href="{{ $_SERVER['HTTP_REFERER'] }}"><i class="fas fa-arrow-circle-left"></i>BACK</a></div>
 	<div class="row image">
 	    <div class="col-xs-12">
 	        <img src="{{ asset('storage/images/' . $portfolio->image) }}" class="portfolio-image" />
@@ -36,6 +35,6 @@ BACK</a></div>
 		</div>
 	</div>
 </div>
-
+</div>
 @endsection
 @include('layouts.footer')

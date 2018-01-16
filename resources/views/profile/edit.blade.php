@@ -5,7 +5,7 @@
 @include('layouts.head')
 @include('layouts.header')
 @section('content')
-
+<div class="container">
 <div class="profileEdit">
 	<form method="POST" action="{{ asset('profile/edit/$user->id') }}">
 	<div class="row">
@@ -39,6 +39,7 @@
 	    </div>
 	</div>
 	</form>
+</div>
 </div>
 <script type="text/javascript" src="js/original.js"></script>
 @endsection

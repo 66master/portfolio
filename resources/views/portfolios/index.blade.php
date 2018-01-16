@@ -9,6 +9,7 @@
 @include('layouts.header')
 
 @section('content')
+<div class="container">
 <div class="row-flex row-flex-wrap">
 
 	@if(isset($message))
@@ -28,7 +29,7 @@
     </div>
 
     @endforeach
-
+</div>
 </div>
 @endsection
 @include('layouts.footer')

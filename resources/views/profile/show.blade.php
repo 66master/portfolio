@@ -6,7 +6,7 @@
 @include('layouts.head')
 @include('layouts.header')
 @section('content')
-
+<div class="container">
 	<div class="row">
 		{{-- id	user_id	introduce	avatar	created_at	updated_at --}}
 		@auth
@@ -39,8 +39,7 @@
 	    </div>
 	</div>
 	@endif
-
-
+</div>
 <script type="text/javascript" src="js/original.js"></script>
 @endsection
 

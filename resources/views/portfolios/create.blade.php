@@ -9,7 +9,6 @@
 @include('layouts.header')
 
 @section('content')
-
 <div class="container">
 	<h1>ポートフォリオ投稿画面</h1>
 
