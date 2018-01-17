@@ -52,7 +52,7 @@ html,body {
 	font-size: 14pt;
 	color: #585858 !important;
 	min-height: 100%;
-	height: auto;
+	height: auto !important;
 	height: 100%;
 	position: relative;
 	font-family: 'Mplus 1p';

@@ -8,7 +8,7 @@
 @include('layouts.head')
 @include('layouts.header')
 @section('content')
-<div class="continer">
+<div class="container">
 <div id="portfolio">
 	<div class="localNav"><a href="{{ $_SERVER['HTTP_REFERER'] }}"><i class="fas fa-arrow-circle-left"></i>BACK</a></div>
 	<div class="row image">
