@@ -52,7 +52,7 @@ html,body {
 	font-size: 14pt;
 	color: #585858 !important;
 	min-height: 100%;
-	height: auto !important;
+	height: auto;
 	height: 100%;
 	position: relative;
 	font-family: 'Mplus 1p';
@@ -70,10 +70,6 @@ html,body {
 
 .navbar-default .navbar-nav>li>a {
 	color: #585858;
-}
-
-.navbar {
-	margin-bottom: 0;
 }
 
 .container {
@@ -103,6 +99,7 @@ html,body {
 
 .jumbotron {
 	height: 400px;
+	margin-top: -20px;
 	background: url('../storage/images/lions-2702828.jpg') fixed 0 -200px;
 	background-size: cover;
 }
