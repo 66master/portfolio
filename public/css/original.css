@@ -52,6 +52,7 @@
 * {
 	font-family: 'Montserrat', 'Mplus 1p', sans-serif;
 	color: #000;
+	transform: rotate(0.001deg);
 }
 
 html,body {
