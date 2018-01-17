@@ -9,8 +9,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a href="" class="navbar-brand">My Portfolio</a>
-					<a class="navbar-brand" href="{{ url('/') }}">{{ config('app.name', 'Laravel') }}</a>
+					<a class="navbar-brand" href="{{ url('/') }}">Takuya Ohno Portfolio</a>
 				</div>
 			<div class="collapse navbar-collapse navbar-right globalNav" id="navbarCompact">
 				<ul class="nav navbar-nav">
@@ -18,7 +17,7 @@
 					<li class="nav-item"><a href="{{ url('portfolios').'?category=PAPER' }}" class="nav-link">PAPER</a></li>
 					<li class="nav-item"><a href="{{ url('portfolios').'?category=DESIGN' }}" class="nav-link">DESIGN</a></li>
 				</ul>
-				<ul class="nav navbar-nav navbar-right">
+				<ul class="nav navbar-nav navbar-right" id="hiddenDropdown" style="display: none;">
 					@guest
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Wellcome!!</a>

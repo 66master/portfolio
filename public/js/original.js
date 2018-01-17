@@ -2,6 +2,7 @@
 	'use strict';
 
 	var loginBtn = document.getElementById('login');
+	var hiddenBtn = document.getElementById('hiddenDropdown');
 	var returnAjax = getEnvFromJs('MY_COMMAND');
 	const COMMAND = returnAjax;
 	console.log(COMMAND);
@@ -18,6 +19,7 @@
 		}
 		
 		if(COMMAND == getCommand){
+			hiddenDropdown.style.display = "block";
 			loginBtn.style.display = "inline";
 		}
 
