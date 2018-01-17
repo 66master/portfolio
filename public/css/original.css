@@ -52,7 +52,7 @@
 * {
 	font-family: 'Montserrat', 'Mplus 1p', sans-serif;
 	color: #000;
-	transform: rotate(0.001deg);
+	transform: rotate(0.01deg);
 }
 
 html,body {
@@ -181,7 +181,7 @@ footer {
 	height: auto;
 	padding: 20px;
 	color: #fff;
-	background-color: #333;
+	background-color: #eee;
 	opacity: 0.9;
 }
 

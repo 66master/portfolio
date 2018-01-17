@@ -17,16 +17,13 @@
 	    </div>
 	</div>
 	<div class="row category">
-		<div class="col-xs-2">
-			{{ $portfolio->category }}
-		</div>
-		<div class="col-xs-10">
-			{{ $portfolio->type }}
+		<div class="col-xs-12">
+			CATEGORY : {{ $portfolio->category }} > {{ $portfolio->type }}
 		</div>
 	</div>
 	<div class="row title">
 		<div class="col-xs-12">
-			{{ $portfolio->title }}
+			TITLE : {{ $portfolio->title }}
 		</div>
 	</div>
 	<div class="row description">
