@@ -1,5 +1,4 @@
 <!DOCTYPE HTML>
-
 <html lang="{{ app()->getLocale() }}">
 <head>
   @yield('head')

@@ -16,6 +16,7 @@
 					<li class="nav-inem"><a href="{{ url('portfolios').'?category=WEB' }}" class="nav-link">WEB</a></li>
 					<li class="nav-item"><a href="{{ url('portfolios').'?category=PAPER' }}" class="nav-link">PAPER</a></li>
 					<li class="nav-item"><a href="{{ url('portfolios').'?category=DESIGN' }}" class="nav-link">DESIGN</a></li>
+					<li class="nav-item" style="margin-left: 15px;"><a href="{{ url('profile/show/1') }}">プロフィール</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right" id="hiddenDropdown" style="display: none;">
 					@guest

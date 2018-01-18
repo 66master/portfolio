@@ -11,7 +11,7 @@
 --}}
 
 
-<p class="copyright"><small>&copy; 2017 Takuya Ohno<br />各制作物の著作権は所有企業に所属します。</small></p>
+<p class="copyright"><small>&copy; 2017 Takuya Ohno<br />※各制作物の著作権は各々の企業に帰属します。</small></p>
 
 </footer>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>

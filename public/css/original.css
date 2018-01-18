@@ -52,7 +52,7 @@
 * {
 	font-family: 'Montserrat', 'Mplus 1p', sans-serif;
 	color: #000;
-	transform: rotate(0.01deg);
+	transform: rotate(0.001deg);
 }
 
 html,body {
@@ -63,6 +63,22 @@ html,body {
 	height: 100%;
 	position: relative;
 
+}
+
+/*
+img::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: '';
+	background-color: red;
+	width: 100px;
+	height: 100px;
+}
+*/
+
+#udemy img {
+	width: 100%;
 }
 
 #wrapper {
