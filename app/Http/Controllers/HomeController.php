@@ -35,7 +35,7 @@ class HomeController extends Controller
 
         //$logo_filesをファイル名だけに置換
         $users = DB::table('users')->get();
-        $portfolios = DB::table('portfolios')->get();
+        $portfolios = DB::table('portfolios')->orderBy('id', 'desc')->get();
         return view('home', ['portfolios' => $portfolios, 'users' => $users])->with('logo_files', $logo_files);
 
     }
