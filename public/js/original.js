@@ -49,11 +49,25 @@
 			}).responseText;
 
 			return returnAjax;
-
-			//return def.promise();
-			
-
-			//return def.promise();
 	}
+
+	function typewriter(){
+		var text = 'Takuya Ohno Portfolio';
+		var textArray = text.split('');
+		var i = 0;
+		function show(){
+			var h1Tag = document.getElementById('typing');
+			h1Tag.innerHTML = h1Tag.innerHTML + textArray[i];
+			i++;
+			var tid = setTimeout(function(){
+				show();
+			}, 100);
+			if(i == textArray.length){
+				clearTimeout(tid);
+			}
+		}
+		show();
+	}
+	typewriter();
 
 }());

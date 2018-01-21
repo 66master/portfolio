@@ -9,7 +9,7 @@
 @include('layouts.header')
 @section('content')
 <div class="jumbotron">
-	<h1>Takuya Ohno Portfolio</h1>
+	<h1 id="typing"></h1>
 </div>
 <div class="container">
 	<div class="row-flex row-flex-wrap">
