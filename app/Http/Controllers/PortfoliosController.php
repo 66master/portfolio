@@ -99,5 +99,32 @@ class PortfoliosController extends controller
         return view('portfolios/show')->with('portfolio', $portfolio);
     }
 
+    /*
+
+    public function edit($id)
+    {
+        $portfolio = DB::table('portfoios')->where('id', $id)->first();
+        return view('portfolios/{$id}/edit')->with('portfolio', $portfolio);
+    }
+
+    */
+
+    /**
+     * 特定ポートフォリオの保存
+     *
+     * @param  Request  $request
+     * @param  int  $id
+     * @return Response
+     */
+
+    /*
+    public function update(Request $request, $id)
+    {
+
+        DB::table('portfolio')->where('id', $id)->update(['image' => $request->image, 'category' => $request->category, 'type' => $request->type, 'title' => $request->title, 'description' => $request->description]);
+    }
+    */
+
+
 
 }

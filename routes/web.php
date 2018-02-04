@@ -27,6 +27,8 @@ Route::get('/portfolios/create', 'PortfoliosController@create');
 Route::post('/portfolios', 'PortfoliosController@store');
 Route::get('/portfolios/edit', 'PortfoliosController@edit');
 Route::get('/portfolios/show/{id}', 'PortfoliosController@show')->name('portfolio.show');
+Route::post('/portfolios/{id}/edit', 'PortfoliosController@edit')->name('portfolio.edit');
+Route::post('/portfolios/{id}/update', 'PortfoliosController@update');
 
 
 //profile

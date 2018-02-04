@@ -9,12 +9,15 @@
 @include('layouts.header')
 
 @section('content')
-<div class="container">
+<div class="container portfolioIndex">
 <div class="row-flex row-flex-wrap">
 
 	@if(isset($message))
 		<p>{{ $message }}</p>
 	@endif
+	<div class="col-xs-12">
+		<h1><i class="far fa-hand-point-down"></i>Index of {{ $_GET['category'] }} Category</h1>
+	</div>
     @foreach($portfolios as $portfolio)
     <div class="col-xs square">
     	<a href="{{ asset('portfolios/show/' . $portfolio->id) }}">

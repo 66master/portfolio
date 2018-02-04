@@ -189,6 +189,10 @@ a::after {
 	align-items: center;
 }
 
+.portfolioIndex h1 {
+	text-align:center;
+}
+
 /* footer */
 footer {
 	position: absolute;
